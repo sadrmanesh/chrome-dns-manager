@@ -1,5 +1,9 @@
 # DNS Configuration Manager
 
+<p align="center">
+  <img src="icons/icon128.png" width="96" alt="DNS Configuration Manager app icon">
+</p>
+
 A Manifest V3 Chrome extension for browsing DNS provider options, saving DNS profiles, and keeping DoH provider templates together for manual setup.
 
 [Project website](https://sadrmanesh.github.io/chrome-dns-manager/) · [GitHub repository](https://github.com/sadrmanesh/chrome-dns-manager)
@@ -15,6 +19,15 @@ A Manifest V3 Chrome extension for browsing DNS provider options, saving DNS pro
 - Choose system, light, or dark appearance.
 - Use the interface in English, Persian, Arabic, or Chinese.
 - View browser-provided network estimates when supported. These are not active measurements.
+
+## Interface previews
+
+These illustrative interface mockups are design previews, not screenshots captured from a running browser or extension.
+
+| Browse DNS profiles | Save custom profiles | Secure DNS templates |
+|:--:|:--:|:--:|
+| <img src="assets/screenshots/profile-library.png" width="320" alt="Illustrative DNS profile library interface"> | <img src="assets/screenshots/custom-profiles.png" width="320" alt="Illustrative custom DNS profiles interface"> | <img src="assets/screenshots/secure-dns-templates.png" width="320" alt="Illustrative Chrome Secure DNS templates interface"> |
+| Search and compare provider profiles, then copy addresses for manual setup. | Save profiles locally and import or export JSON backups. | Review and copy resolver templates for manual Chrome Secure DNS setup. |
 
 ## Install
 
