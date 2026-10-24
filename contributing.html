@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Contribution guide for DNS Configuration Manager.">
+  <title>🤝 Contributing | DNS Configuration Manager</title>
+  <link rel="stylesheet" href="site.css">
+  <script src="site.js" defer></script>
+</head>
+<body class="site-page">
+  <main class="contrib-container">
+    <header class="header">
+      <p class="eyebrow" data-lang-copy-en="DNS Configuration Manager · Project guide" data-lang-copy-fa="مدیر پیکربندی DNS · راهنمای پروژه" data-lang-copy-ar="مدير إعداد DNS · دليل المشروع" data-lang-copy-zh="DNS 配置管理器 · 项目指南">DNS Configuration Manager · Project guide</p>
+      <h1>🤝 <span data-lang-copy-en="Contributing" data-lang-copy-fa="مشارکت در توسعه" data-lang-copy-ar="المساهمة" data-lang-copy-zh="参与贡献">Contributing</span></h1>
+      <p data-lang-copy-en="Bug reports, practical feature proposals, and focused code contributions are welcome." data-lang-copy-fa="گزارش باگ، پیشنهادهای کاربردی و مشارکت‌های کدنویسی هدفمند پذیرفته می‌شوند." data-lang-copy-ar="نرحب بالإبلاغ عن الأخطاء واقتراح الميزات العملية والمساهمات البرمجية المحددة." data-lang-copy-zh="欢迎提交问题报告、实用功能建议和目标明确的代码贡献。">Bug reports, practical feature proposals, and focused code contributions are welcome.</p>
+    </header>
+
+    <nav class="lang-tabs" aria-label="Choose guide language">
+      <button class="lang-tab active" type="button" data-lang="en" aria-pressed="true">English</button>
+      <button class="lang-tab" type="button" data-lang="fa" aria-pressed="false">فارسی</button>
+      <button class="lang-tab" type="button" data-lang="ar" aria-pressed="false">العربية</button>
+      <button class="lang-tab" type="button" data-lang="zh" aria-pressed="false">中文</button>
+    </nav>
+
+    <section class="lang-content active" data-lang="en" lang="en">
+      <h2>Contribution guide</h2>
+      <p>Use the project repository to report a reproducible issue, discuss a proposed change, or submit a pull request.</p>
+      <div class="feature-card">
+        <h3>Report a bug</h3>
+        <ul>
+          <li>Search existing issues first and provide a concise, descriptive title.</li>
+          <li>Include steps to reproduce, expected and actual behavior, Chrome version, OS, and extension version.</li>
+          <li>Attach relevant screenshots or console errors; remove personal or sensitive information.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>Propose a feature</h3>
+        <ul>
+          <li>Describe the user problem, intended benefit, and a clear acceptance outcome.</li>
+          <li>Discuss larger changes in an issue before investing in implementation.</li>
+          <li>Do not promise resolver performance: provider details are reference data, not measured results.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>Submit code</h3>
+        <ol>
+          <li>Fork the repository and create a focused branch.</li>
+          <li>Keep changes scoped, use semantic HTML, responsive CSS, and modern JavaScript.</li>
+          <li>Preserve Manifest V3 security boundaries and request no permissions without a justified need.</li>
+          <li>Run <code>npm run lint</code>, load the unpacked extension in Chrome, and check affected UI and locales.</li>
+          <li>Open a pull request describing the motivation, behavior change, verification, and screenshots for UI work.</li>
+        </ol>
+      </div>
+      <div class="feature-card">
+        <h3>Project-specific requirements</h3>
+        <ul>
+          <li>DNS profiles and DoH templates are reference information for user-led, manual configuration.</li>
+          <li>Do not add active resolver probes, speed tests, or game-server pings without an explicit privacy and store-policy review.</li>
+          <li>Keep translations consistent across English, Persian, Arabic, and Chinese.</li>
+          <li>Validate imported profile data, explain errors to users, and avoid overwriting existing profiles.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>Security and privacy</h3>
+        <p>Minimize permissions and data access. Do not introduce telemetry, uploads, or remote code. Review <a href="SECURITY.md">SECURITY.md</a> before changing security-sensitive behavior.</p>
+      </div>
+    </section>
+
+    <section class="lang-content" data-lang="fa" lang="fa" dir="rtl">
+      <h2>راهنمای مشارکت</h2>
+      <p>برای گزارش مشکل قابل‌بازتولید، پیشنهاد تغییر یا ارسال Pull Request از مخزن پروژه استفاده کنید.</p>
+      <div class="feature-card">
+        <h3>گزارش باگ</h3>
+        <ul>
+          <li>ابتدا Issues موجود را بررسی کنید و عنوانی روشن بنویسید.</li>
+          <li>مراحل بازتولید، رفتار مورد انتظار و واقعی، نسخهٔ Chrome، سیستم‌عامل و نسخهٔ افزونه را ذکر کنید.</li>
+          <li>در صورت نیاز تصویر یا خطای کنسول را پیوست کنید و اطلاعات شخصی یا حساس را حذف کنید.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>پیشنهاد قابلیت</h3>
+        <ul>
+          <li>مسئلهٔ کاربر، فایدهٔ قابلیت و نتیجهٔ مورد انتظار را توضیح دهید.</li>
+          <li>پیش از پیاده‌سازی تغییرات بزرگ، آن‌ها را در یک Issue مطرح کنید.</li>
+          <li>عملکرد DNS ارائه‌دهندگان را تضمین نکنید؛ اطلاعات آن‌ها مرجع است و اندازه‌گیری نمی‌شود.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>ارسال کد</h3>
+        <ol>
+          <li>مخزن را Fork کنید و شاخه‌ای با هدف مشخص بسازید.</li>
+          <li>تغییرات را محدود نگه دارید و از HTML معنایی، CSS واکنش‌گرا و JavaScript امروزی استفاده کنید.</li>
+          <li>مرزهای امنیتی Manifest V3 را حفظ کنید و بدون ضرورت مستند، مجوز جدید نخواهید.</li>
+          <li><code>npm run lint</code> را اجرا کنید، افزونهٔ unpacked را در Chrome بارگذاری کنید و رابط و زبان‌های مرتبط را بررسی کنید.</li>
+          <li>در Pull Request انگیزه، تغییر رفتار، روش بررسی و برای تغییرات رابط تصویر ارائه دهید.</li>
+        </ol>
+      </div>
+      <div class="feature-card">
+        <h3>الزامات ویژهٔ پروژه</h3>
+        <ul>
+          <li>پروفایل‌های DNS و الگوهای DoH اطلاعات مرجع برای پیکربندی دستی توسط کاربر هستند.</li>
+          <li>بدون بررسی صریح حریم خصوصی و سیاست فروشگاه، آزمون فعال DNS، سرعت یا پینگ سرور بازی اضافه نکنید.</li>
+          <li>ترجمه‌ها را در انگلیسی، فارسی، عربی و چینی هماهنگ نگه دارید.</li>
+          <li>داده‌های واردشده را اعتبارسنجی کنید، خطاها را توضیح دهید و پروفایل‌های موجود را بازنویسی نکنید.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>امنیت و حریم خصوصی</h3>
+        <p>مجوزها و دسترسی به داده را به حداقل برسانید. تله‌متری، بارگذاری داده یا کد از راه دور اضافه نکنید. پیش از تغییر رفتار حساس امنیتی، <a href="SECURITY.md">SECURITY.md</a> را بخوانید.</p>
+      </div>
+    </section>
+
+    <section class="lang-content" data-lang="ar" lang="ar" dir="rtl">
+      <h2>دليل المساهمة</h2>
+      <p>استخدم مستودع المشروع للإبلاغ عن مشكلة قابلة لإعادة الإنتاج أو مناقشة اقتراح أو إرسال طلب سحب.</p>
+      <div class="feature-card">
+        <h3>الإبلاغ عن خطأ</h3>
+        <ul>
+          <li>ابحث في المشكلات الحالية أولًا واكتب عنوانًا واضحًا.</li>
+          <li>أرفق خطوات إعادة الإنتاج والسلوك المتوقع والفعلي وإصدارات Chrome والنظام والإضافة.</li>
+          <li>أرفق لقطات أو أخطاء وحدة التحكم عند الحاجة، واحذف المعلومات الشخصية أو الحساسة.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>اقتراح ميزة</h3>
+        <ul>
+          <li>اشرح مشكلة المستخدم والفائدة والنتيجة المتوقعة بوضوح.</li>
+          <li>ناقش التغييرات الكبيرة في Issue قبل بدء تنفيذها.</li>
+          <li>لا تَعِد بأداء لمزود DNS؛ بيانات المزودين مرجعية وليست نتائج قياس.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>إرسال تغييرات برمجية</h3>
+        <ol>
+          <li>أنشئ Fork للمستودع وفرعًا محدد النطاق.</li>
+          <li>حافظ على نطاق التغيير واستخدم HTML دلاليًا وCSS متجاوبًا وJavaScript حديثًا.</li>
+          <li>حافظ على حدود أمان Manifest V3 ولا تطلب أذونات دون حاجة مبررة.</li>
+          <li>شغّل <code>npm run lint</code> وحمّل الإضافة غير المعبأة في Chrome وافحص الواجهة واللغات المتأثرة.</li>
+          <li>اشرح الدافع وتغيير السلوك والتحقق، وأرفق صورًا لتغييرات الواجهة في طلب السحب.</li>
+        </ol>
+      </div>
+      <div class="feature-card">
+        <h3>متطلبات خاصة بالمشروع</h3>
+        <ul>
+          <li>ملفات DNS وقوالب DoH معلومات مرجعية للإعداد اليدوي من قبل المستخدم.</li>
+          <li>لا تضف فحوص DNS النشطة أو اختبارات السرعة أو Ping لخوادم الألعاب دون مراجعة صريحة للخصوصية وسياسات المتجر.</li>
+          <li>حافظ على اتساق الترجمات بالإنجليزية والفارسية والعربية والصينية.</li>
+          <li>تحقق من بيانات الملفات المستوردة واشرح الأخطاء ولا تستبدل الملفات الموجودة.</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>الأمان والخصوصية</h3>
+        <p>قلّل الأذونات والوصول إلى البيانات. لا تضف القياس عن بُعد أو رفع البيانات أو الشيفرة البعيدة. راجع <a href="SECURITY.md">SECURITY.md</a> قبل تغيير السلوك الحساس أمنيًا.</p>
+      </div>
+    </section>
+
+    <section class="lang-content" data-lang="zh" lang="zh" dir="ltr">
+      <h2>贡献指南</h2>
+      <p>请通过项目仓库报告可复现的问题、讨论功能建议或提交 Pull Request。</p>
+      <div class="feature-card">
+        <h3>报告问题</h3>
+        <ul>
+          <li>先搜索现有 Issues，并使用清晰简洁的标题。</li>
+          <li>提供复现步骤、预期与实际行为，以及 Chrome、操作系统和扩展版本。</li>
+          <li>必要时附上截图或控制台错误，并删除个人或敏感信息。</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>提出功能建议</h3>
+        <ul>
+          <li>说明用户问题、预期收益和可验收的结果。</li>
+          <li>较大的改动请先通过 Issue 讨论。</li>
+          <li>不要承诺 DNS 服务商性能；服务商信息是参考资料，并非实测结果。</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>提交代码</h3>
+        <ol>
+          <li>Fork 仓库并创建目标明确的分支。</li>
+          <li>保持改动范围集中，使用语义化 HTML、响应式 CSS 和现代 JavaScript。</li>
+          <li>遵循 Manifest V3 安全边界；新增权限必须有充分理由。</li>
+          <li>运行 <code>npm run lint</code>，在 Chrome 中加载未打包扩展，并检查相关界面和语言。</li>
+          <li>Pull Request 需说明动机、行为变化和验证方式；界面改动请附截图。</li>
+        </ol>
+      </div>
+      <div class="feature-card">
+        <h3>项目特定要求</h3>
+        <ul>
+          <li>DNS 配置和 DoH 模板是供用户手动配置的参考信息。</li>
+          <li>未经明确的隐私与商店政策审查，不要添加主动 DNS 探测、速度测试或游戏服务器 Ping。</li>
+          <li>保持英语、波斯语、阿拉伯语和中文翻译一致。</li>
+          <li>验证导入数据、向用户说明错误，并避免覆盖现有配置。</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <h3>安全与隐私</h3>
+        <p>尽量减少权限和数据访问。不要引入遥测、数据上传或远程代码。更改安全敏感行为前请阅读 <a href="SECURITY.md">SECURITY.md</a>。</p>
+      </div>
+    </section>
+
+    <footer class="page-footer">
+      <span data-lang-copy-en="Contributions are reviewed through the project repository." data-lang-copy-fa="مشارکت‌ها از طریق مخزن پروژه بررسی می‌شوند." data-lang-copy-ar="تُراجع المساهمات عبر مستودع المشروع." data-lang-copy-zh="所有贡献均通过项目仓库进行审查。">Contributions are reviewed through the project repository.</span>
+      <span><a href="CONTRIBUTING.md" data-lang-copy-en="Markdown source" data-lang-copy-fa="نسخهٔ Markdown" data-lang-copy-ar="نسخة Markdown" data-lang-copy-zh="Markdown 源文件">Markdown source</a> · <a href="https://github.com/sadrmanesh/chrome-dns-manager" target="_blank" rel="noopener noreferrer" data-lang-copy-en="GitHub repository" data-lang-copy-fa="مخزن GitHub" data-lang-copy-ar="مستودع GitHub" data-lang-copy-zh="GitHub 仓库">GitHub repository</a></span>
+    </footer>
+  </main>
+</body>
+</html>

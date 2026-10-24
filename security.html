@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>🔒 Security & Privacy – DNS Extension</title>
+  <style>
+    body {
+      min-height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', 'Vazirmatn', 'Noto Sans', Arial, sans-serif;
+      background: linear-gradient(135deg, #e0e7ff 0%, #f0fdfa 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .security-container {
+      background: rgba(255,255,255,0.7);
+      border-radius: 24px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.18);
+      backdrop-filter: blur(12px);
+      padding: 36px 28px 28px 28px;
+      max-width: 700px;
+      width: 100%;
+      margin: 32px 8px;
+      color: #222;
+      position: relative;
+      border: 1.5px solid rgba(120,120,255,0.13);
+      overflow-y: auto;
+      max-height: 95vh;
+    }
+    .security-title {
+      font-size: 1.7rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      letter-spacing: 0.5px;
+      display: flex;
+      align-items: center;
+      gap: 0.5em;
+    }
+    .security-section {
+      margin-bottom: 18px;
+    }
+    .security-section h2 {
+      font-size: 1.1rem;
+      margin: 0 0 6px 0;
+      font-weight: 600;
+      color: #3b82f6;
+      letter-spacing: 0.2px;
+    }
+    ul, ol {
+      margin: 0 0 0 1.2em;
+      padding: 0;
+    }
+    li {
+      margin-bottom: 4px;
+      line-height: 1.6;
+    }
+    .lang-block {
+      margin-bottom: 22px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #e0e7ff;
+    }
+    .lang-block:last-child {
+      border-bottom: none;
+    }
+    .back-btn {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      background: rgba(99,102,241,0.13);
+      color: #6366f1;
+      border: none;
+      border-radius: 8px;
+      padding: 6px 16px;
+      font-size: 1em;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+      box-shadow: 0 2px 8px rgba(99,102,241,0.07);
+    }
+    .back-btn:hover {
+      background: rgba(99,102,241,0.22);
+    }
+    .security-badge {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #6366f1;
+      border-radius: 8px;
+      padding: 2px 10px;
+      font-size: 0.95em;
+      margin-left: 8px;
+      font-weight: 600;
+      letter-spacing: 0.2px;
+    }
+    @media (max-width: 800px) {
+      .security-container {
+        padding: 18px 4vw 18px 4vw;
+        max-width: 98vw;
+      }
+      .back-btn {
+        top: 10px;
+        right: 10px;
+        padding: 5px 10px;
+      }
+    }
+  </style>
+    <link rel="stylesheet" href="site.css">
+    <script src="site.js" defer></script>
+</head>
+<body class="site-page">
+  <div class="security-container">
+    <button class="back-btn" onclick="window.location.href='index.html'">⟵ Back</button>
+    <div class="security-title">🔒 Security & Privacy <span class="security-badge">Transparent & Safe</span></div>
+    <div class="lang-block">
+      <h2>🇺🇸 English</h2>
+      <div class="security-section">
+        <h2>✅ Complete Security Checklist</h2>
+        <ul>
+          <li><b>storage:</b> For storing DNS profiles locally</li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🚫 Unnecessary Permissions Removed</h2>
+        <ul>
+          <li>activeTab, tabs, bookmarks, history: <b>Removed</b></li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🛡️ Security Features</h2>
+        <ul>
+          <li>No data collection or transmission</li>
+          <li>All settings stored only in your browser</li>
+          <li>Browser-provided network estimates, when available, are displayed locally and are not stored or transmitted</li>
+          <li>No active speed test or game-server ping</li>
+          <li>Open source & fully transparent</li>
+          <li>No tracking, analytics, or extra cookies</li>
+          <li>Developer: Naser Sadrmanesh · <a href="https://github.com/sadrmanesh" target="_blank" rel="noopener noreferrer">GitHub profile</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lang-block" dir="rtl">
+      <h2>🇮🇷 فارسی</h2>
+      <div class="security-section">
+        <h2>✅ چک‌لیست امنیتی کامل</h2>
+        <ul>
+          <li><b>storage:</b> برای ذخیرهٔ محلی پروفایل‌های DNS</li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🚫 دسترسی‌های غیرضروری حذف شده</h2>
+        <ul>
+          <li>activeTab، tabs، bookmarks، history: <b>حذف شد</b></li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🛡️ ویژگی‌های امنیتی</h2>
+        <ul>
+          <li>عدم جمع‌آوری یا ارسال داده</li>
+          <li>تمام تنظیمات فقط در مرورگر شما ذخیره می‌شود</li>
+          <li>تخمین‌های شبکهٔ ارائه‌شده توسط مرورگر، در صورت دسترسی، فقط به‌صورت محلی نمایش داده می‌شوند و ذخیره یا ارسال نمی‌شوند</li>
+          <li>آزمون فعال سرعت یا پینگ سرور بازی اجرا نمی‌شود</li>
+          <li>کد منبع باز و شفافیت کامل</li>
+          <li>بدون tracking، analytics یا cookie اضافی</li>
+          <li>توسعه‌دهنده: ناصر صدرمنش · <a href="https://github.com/sadrmanesh" target="_blank" rel="noopener noreferrer">صفحهٔ گیت‌هاب</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lang-block" dir="rtl">
+      <h2>🇸🇦 العربية</h2>
+      <div class="security-section">
+        <h2>✅ قائمة التحقق الأمنية الكاملة</h2>
+        <ul>
+          <li><b>storage:</b> لحفظ ملفات DNS محليًا</li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🚫 الأذونات غير الضرورية المحذوفة</h2>
+        <ul>
+          <li>activeTab، tabs، bookmarks، history: <b>تم حذفها</b></li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🛡️ الميزات الأمنية</h2>
+        <ul>
+          <li>لا يتم جمع أو إرسال أي بيانات</li>
+          <li>جميع الإعدادات محفوظة فقط في متصفحك</li>
+          <li>تُعرض تقديرات الشبكة التي يوفرها المتصفح محليًا عند توفرها، ولا تُخزّن أو تُرسل</li>
+          <li>لا يُجرى اختبار سرعة فعلي أو ping لخادم لعبة</li>
+          <li>كود مفتوح المصدر وشفاف بالكامل</li>
+          <li>بدون تتبع أو تحليلات أو ملفات تعريف ارتباط إضافية</li>
+          <li>المطور: ناصر صدرمنش · <a href="https://github.com/sadrmanesh" target="_blank" rel="noopener noreferrer">صفحة GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="lang-block">
+      <h2>🇨🇳 中文</h2>
+      <div class="security-section">
+        <h2>✅ 完整安全检查清单</h2>
+        <ul>
+          <li><b>storage：</b> 用于在本地保存 DNS 配置</li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🚫 已删除的不必要权限</h2>
+        <ul>
+          <li>activeTab、tabs、bookmarks、history：<b>已删除</b></li>
+        </ul>
+      </div>
+      <div class="security-section">
+        <h2>🛡️ 安全功能</h2>
+        <ul>
+          <li>不收集或传输任何数据</li>
+          <li>所有设置仅存储在您的浏览器中</li>
+          <li>浏览器提供的网络估算值（如可用）仅在本地显示，不会存储或传输</li>
+          <li>不会进行主动测速或 ping 游戏服务器</li>
+          <li>开源且完全透明</li>
+          <li>无跟踪、分析或额外 cookie</li>
+          <li>开发者：Naser Sadrmanesh · <a href="https://github.com/sadrmanesh" target="_blank" rel="noopener noreferrer">GitHub 主页</a></li>
+        </ul>
+      </div>
+    </div>
+    <div style="font-size:0.93em; color:#888; margin-top:10px;">For full details, see the <a href="SECURITY.md" target="_blank">SECURITY.md</a> file on GitHub.</div>
+  </div>
+</body>
+</html> 
