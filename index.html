@@ -44,6 +44,14 @@
             opacity: 0.9;
         }
 
+        .site-logo {
+            display: block;
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 14px;
+            border-radius: 20px;
+        }
+
         .main-content {
             background: white;
             border-radius: 20px;
@@ -199,6 +207,12 @@
             color: #667eea;
             text-align: center;
             margin-bottom: 30px;
+        }
+
+        .screenshot-note {
+            margin: -16px 0 24px;
+            color: #666;
+            text-align: center;
         }
 
         .screenshot-grid {
@@ -452,6 +466,7 @@
         <div class="lang-content lang-en active" data-lang="en">
             <!-- Header -->
             <div class="header">
+                <img class="site-logo" src="icons/icon128.png" alt="DNS Configuration Manager app icon" width="80" height="80">
                 <h1>🌐 DNS Configuration Manager</h1>
                 <p>Smart DNS management extension for Chrome browser with multilingual support</p>
             </div>
@@ -633,24 +648,25 @@
                     </a>
                 </div>
 
-                <!-- Screenshots Section -->
+                <!-- Interface previews -->
                 <div class="screenshots">
-                    <h2>📸 Extension Screenshots</h2>
+                    <h2>🖼️ Interface preview mockups</h2>
+                    <p class="screenshot-note">Illustrative design previews, not screenshots captured from a running browser or extension.</p>
                     <div class="screenshot-grid">
                         <div class="screenshot-item">
-                            <img src="screenshots/main-interface.png" alt="Main Interface" onerror="this.style.display='none'">
-                            <h3>Main Interface</h3>
-                            <p>Clean and intuitive user interface with DNS presets and custom options.</p>
+                            <img src="assets/screenshots/profile-library.png" alt="Illustrative DNS profile library interface" width="1280" height="800" loading="lazy">
+                            <h3>Browse DNS profiles</h3>
+                            <p>Search and compare provider profiles, then copy addresses for manual setup.</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/custom-dns.png" alt="Custom DNS" onerror="this.style.display='none'">
-                            <h3>Custom DNS</h3>
-                            <p>Create and manage your own DNS configurations with ease.</p>
+                            <img src="assets/screenshots/custom-profiles.png" alt="Illustrative custom DNS profiles interface" width="1280" height="800" loading="lazy">
+                            <h3>Save custom profiles</h3>
+                            <p>Save profiles locally and import or export JSON backups.</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/multilingual.png" alt="Multilingual Support" onerror="this.style.display='none'">
-                            <h3>Multilingual Support</h3>
-                            <p>Fully translated interface in multiple languages.</p>
+                            <img src="assets/screenshots/secure-dns-templates.png" alt="Illustrative Chrome Secure DNS templates interface" width="1280" height="800" loading="lazy">
+                            <h3>Secure DNS templates</h3>
+                            <p>Review and copy resolver templates for manual Chrome Secure DNS setup.</p>
                         </div>
                     </div>
                 </div>
@@ -690,6 +706,7 @@
         <!-- Persian Content -->
         <div class="lang-content lang-fa" data-lang="fa" dir="rtl" lang="fa">
             <div class="header">
+                <img class="site-logo" src="icons/icon128.png" alt="نماد مدیر تنظیمات DNS" width="80" height="80">
                 <h1>🌐 مدیر تنظیمات DNS</h1>
                 <p>افزونه مدیریت هوشمند DNS برای مرورگر کروم با پشتیبانی چندزبانه</p>
             </div>
@@ -839,22 +856,23 @@
                     <a href="security.html" class="btn btn-success" target="_blank">🔒 امنیت و حریم خصوصی</a>
                 </div>
                 <div class="screenshots">
-                    <h2>📸 تصاویر افزونه</h2>
+                    <h2>🖼️ پیش‌نمایش‌های رابط کاربری</h2>
+                    <p class="screenshot-note">این‌ها پیش‌نمایش‌های طراحی هستند، نه تصویر ثبت‌شده از اجرای واقعی مرورگر یا افزونه.</p>
                     <div class="screenshot-grid">
                         <div class="screenshot-item">
-                            <img src="screenshots/main-interface.png" alt="رابط اصلی" onerror="this.style.display='none'">
-                            <h3>رابط کاربری اصلی</h3>
-                            <p>رابط کاربری ساده و شهودی با DNSهای آماده و سفارشی.</p>
+                            <img src="assets/screenshots/profile-library.png" alt="پیش‌نمایش کتابخانه پروفایل‌های DNS" width="1280" height="800" loading="lazy">
+                            <h3>مرور پروفایل‌های DNS</h3>
+                            <p>پروفایل‌ها را جست‌وجو و مقایسه کنید و نشانی‌ها را برای تنظیم دستی کپی کنید.</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/custom-dns.png" alt="DNS سفارشی" onerror="this.style.display='none'">
-                            <h3>DNS سفارشی</h3>
-                            <p>به راحتی تنظیمات DNS دلخواه خود را بسازید و مدیریت کنید.</p>
+                            <img src="assets/screenshots/custom-profiles.png" alt="پیش‌نمایش پروفایل‌های DNS سفارشی" width="1280" height="800" loading="lazy">
+                            <h3>ذخیره پروفایل‌های سفارشی</h3>
+                            <p>پروفایل‌ها را ذخیره و نسخه پشتیبان JSON را وارد یا صادر کنید.</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/multilingual.png" alt="پشتیبانی چندزبانه" onerror="this.style.display='none'">
-                            <h3>پشتیبانی چندزبانه</h3>
-                            <p>رابط کاملاً ترجمه‌شده به چند زبان.</p>
+                            <img src="assets/screenshots/secure-dns-templates.png" alt="پیش‌نمایش الگوهای Chrome Secure DNS" width="1280" height="800" loading="lazy">
+                            <h3>الگوهای Secure DNS</h3>
+                            <p>الگوهای resolver را برای تنظیم دستی Secure DNS در Chrome بررسی و کپی کنید.</p>
                         </div>
                     </div>
                 </div>
@@ -879,6 +897,7 @@
         <!-- Arabic Content -->
         <div class="lang-content lang-ar" data-lang="ar" dir="rtl" lang="ar">
             <div class="header">
+                <img class="site-logo" src="icons/icon128.png" alt="أيقونة مدير إعدادات DNS" width="80" height="80">
                 <h1>🌐 مدير إعدادات DNS</h1>
                 <p>إضافة إدارة DNS ذكية لمتصفح كروم مع دعم متعدد اللغات</p>
             </div>
@@ -1028,22 +1047,23 @@
                     <a href="security.html" class="btn btn-success" target="_blank">🔒 الأمان والخصوصية</a>
                 </div>
                 <div class="screenshots">
-                    <h2>📸 لقطات من الإضافة</h2>
+                    <h2>🖼️ معاينات واجهة المستخدم</h2>
+                    <p class="screenshot-note">هذه نماذج توضيحية للتصميم، وليست لقطات شاشة من متصفح أو إضافة قيد التشغيل.</p>
                     <div class="screenshot-grid">
                         <div class="screenshot-item">
-                            <img src="screenshots/main-interface.png" alt="الواجهة الرئيسية" onerror="this.style.display='none'">
-                            <h3>الواجهة الرئيسية</h3>
-                            <p>واجهة مستخدم بسيطة وواضحة مع DNS جاهز ومخصص.</p>
+                            <img src="assets/screenshots/profile-library.png" alt="معاينة مكتبة ملفات DNS" width="1280" height="800" loading="lazy">
+                            <h3>تصفح ملفات DNS</h3>
+                            <p>ابحث عن ملفات المزودين وقارنها ثم انسخ العناوين للإعداد اليدوي.</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/custom-dns.png" alt="DNS مخصص" onerror="this.style.display='none'">
-                            <h3>DNS مخصص</h3>
-                            <p>أنشئ وأدر إعدادات DNS الخاصة بك بسهولة.</p>
+                            <img src="assets/screenshots/custom-profiles.png" alt="معاينة ملفات DNS مخصصة" width="1280" height="800" loading="lazy">
+                            <h3>حفظ ملفات مخصصة</h3>
+                            <p>احفظ الملفات محليًا واستورد نسخ JSON الاحتياطية أو صدّرها.</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/multilingual.png" alt="دعم متعدد اللغات" onerror="this.style.display='none'">
-                            <h3>دعم متعدد اللغات</h3>
-                            <p>واجهة مترجمة بالكامل إلى عدة لغات.</p>
+                            <img src="assets/screenshots/secure-dns-templates.png" alt="معاينة قوالب Chrome Secure DNS" width="1280" height="800" loading="lazy">
+                            <h3>قوالب Secure DNS</h3>
+                            <p>راجع قوالب المحلّلات وانسخها لإعداد Secure DNS يدويًا في Chrome.</p>
                         </div>
                     </div>
                 </div>
@@ -1068,6 +1088,7 @@
         <!-- Chinese Content -->
         <div class="lang-content lang-zh" data-lang="zh" dir="ltr" lang="zh">
             <div class="header">
+                <img class="site-logo" src="icons/icon128.png" alt="DNS 配置管理器应用图标" width="80" height="80">
                 <h1>🌐 DNS配置管理器</h1>
                 <p>适用于Chrome浏览器的智能DNS管理扩展，支持多语言</p>
             </div>
@@ -1217,22 +1238,23 @@
                     <a href="security.html" class="btn btn-success" target="_blank">🔒 安全和隐私</a>
                 </div>
                 <div class="screenshots">
-                    <h2>📸 扩展截图</h2>
+                    <h2>🖼️ 界面设计预览</h2>
+                    <p class="screenshot-note">这些是界面设计预览，并非从运行中的浏览器或扩展程序截取的屏幕截图。</p>
                     <div class="screenshot-grid">
                         <div class="screenshot-item">
-                            <img src="screenshots/main-interface.png" alt="主界面" onerror="this.style.display='none'">
-                            <h3>主界面</h3>
-                            <p>简洁直观的用户界面，支持预设和自定义DNS。</p>
+                            <img src="assets/screenshots/profile-library.png" alt="DNS 配置文件库界面预览" width="1280" height="800" loading="lazy">
+                            <h3>浏览 DNS 配置文件</h3>
+                            <p>搜索并比较服务商配置，然后复制地址以便手动设置。</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/custom-dns.png" alt="自定义DNS" onerror="this.style.display='none'">
-                            <h3>自定义DNS</h3>
-                            <p>轻松创建和管理您的DNS配置。</p>
+                            <img src="assets/screenshots/custom-profiles.png" alt="自定义 DNS 配置文件界面预览" width="1280" height="800" loading="lazy">
+                            <h3>保存自定义配置</h3>
+                            <p>在本地保存配置文件，并导入或导出 JSON 备份。</p>
                         </div>
                         <div class="screenshot-item">
-                            <img src="screenshots/multilingual.png" alt="多语言支持" onerror="this.style.display='none'">
-                            <h3>多语言支持</h3>
-                            <p>界面已完整翻译为多种语言。</p>
+                            <img src="assets/screenshots/secure-dns-templates.png" alt="Chrome Secure DNS 模板界面预览" width="1280" height="800" loading="lazy">
+                            <h3>Secure DNS 模板</h3>
+                            <p>查看并复制解析器模板，以便手动设置 Chrome Secure DNS。</p>
                         </div>
                     </div>
                 </div>
