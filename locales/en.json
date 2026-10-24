@@ -1,0 +1,315 @@
+{
+  "extension": {
+    "name": "DNS Configuration Manager",
+    "description": "Smart DNS settings for Chrome browser"
+  },
+  "popup": {
+    "title": "DNS Settings",
+    "dnsToggle": {
+      "enabled": "Profile selected",
+      "disabled": "No profile selected"
+    },
+    "openInTab": "Open in new tab",
+    "status": {
+      "default": "No DNS profile selected",
+      "connected": "Selected DNS profile:",
+      "noConnection": "No DNS profile selected",
+      "disabled": "No DNS profile selected",
+      "profileSelected": "Saved profile (DNS unchanged)"
+    },
+    "appearance": {
+      "label": "Appearance",
+      "system": "System",
+      "light": "Light",
+      "dark": "Dark"
+    },
+    "network": {
+      "title": "Network & gaming",
+      "refresh": "Refresh",
+      "latency": "Estimated RTT",
+      "downlink": "Estimated download",
+      "connection": "Network type",
+      "notAvailable": "Not available",
+      "estimateNote": "Chrome-provided estimates only; this does not run a speed test or ping a game server.",
+      "gamingTitle": "Gaming and DNS",
+      "gamingNote": "DNS can affect domain lookups during sign-in or matchmaking, but it does not change latency once a game session is connected. Saved profiles do not change Chrome settings."
+    }
+  },
+  "dns": {
+    "discovery": {
+      "subtitle": "Browse providers by purpose, then compare their published options.",
+      "compare": "Compare selected",
+      "searchPlaceholder": "Search providers or addresses",
+      "filterLabel": "Filter DNS providers",
+      "categories": {
+        "all": "All profiles",
+        "standard": "Standard",
+        "security": "Security",
+        "ads": "Ad blocking",
+        "family": "Family",
+        "adult": "Adult content",
+        "unfiltered": "Unfiltered",
+        "uncensored": "Uncensored",
+        "custom": "Custom"
+      },
+      "favoritesOnly": "Favorites",
+      "noResults": "No profiles match these filters.",
+      "selectForCompare": "Select to compare",
+      "addFavorite": "Add to favorites",
+      "removeFavorite": "Remove from favorites",
+      "source": "Official details",
+      "sourceUnavailable": "Source not listed",
+      "dohAvailable": "DoH template available",
+      "noDoh": "No DoH template listed",
+      "lastReviewed": "Details checked",
+      "comparisonTitle": "Provider comparison",
+      "closeComparison": "Close comparison",
+      "comparisonNote": "Provider features and DoH compatibility are based on published details; this extension does not test resolver performance.",
+      "comparisonEmpty": "Select up to 3 profiles using the comparison checkboxes.",
+      "comparisonProfile": "Profile",
+      "comparisonCategory": "Use case",
+      "comparisonServers": "IPv4 servers",
+      "comparisonDoH": "DoH template",
+      "comparisonSource": "Official source"
+    },
+    "backup": {
+      "export": "Export profiles",
+      "import": "Import profiles",
+      "exported": "Profiles exported.",
+      "imported": "Profiles imported.",
+      "noNewProfiles": "All profiles in this file are already saved.",
+      "noProfiles": "There are no saved profiles to export.",
+      "invalidFile": "This profile file is invalid or unsupported.",
+      "tooLarge": "The selected file is too large."
+    },
+    "presets": {
+      "title": "Ready DNS",
+      "google": {
+        "name": "Google DNS",
+        "servers": "8.8.8.8, 8.8.4.4"
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "servers": "1.1.1.1, 1.0.0.1"
+      },
+      "opendns": {
+        "name": "Open DNS",
+        "servers": "208.67.222.222, 208.67.220.220"
+      },
+      "quad9": {
+        "name": "Quad 9",
+        "servers": "9.9.9.9, 149.112.112.112"
+      },
+      "cloudflare_malware": {
+        "name": "Cloudflare Malware Protection",
+        "servers": "1.1.1.2, 1.0.0.2"
+      },
+      "cloudflare_family": {
+        "name": "Cloudflare Family Protection",
+        "servers": "1.1.1.3, 1.0.0.3"
+      },
+      "adguard": {
+        "name": "AdGuard DNS (ads and trackers)",
+        "servers": "94.140.14.14, 94.140.15.15"
+      },
+      "adguard_family": {
+        "name": "AdGuard Family Protection",
+        "servers": "94.140.14.15, 94.140.15.16"
+      },
+      "adguard_unfiltered": {
+        "name": "AdGuard Non-filtering",
+        "servers": "94.140.14.140, 94.140.14.141"
+      },
+      "cleanbrowsing_security": {
+        "name": "CleanBrowsing Security Filter",
+        "servers": "185.228.168.9, 185.228.169.9"
+      },
+      "cleanbrowsing_family": {
+        "name": "CleanBrowsing Family Filter",
+        "servers": "185.228.168.168, 185.228.169.168"
+      },
+      "cleanbrowsing_adult": {
+        "name": "CleanBrowsing Adult Filter",
+        "servers": "185.228.168.10, 185.228.169.11"
+      },
+      "controld_unfiltered": {
+        "name": "Control D Free Unfiltered",
+        "servers": "76.76.2.0, 76.76.10.0"
+      },
+      "controld_malware": {
+        "name": "Control D Free Malware Filter",
+        "servers": "76.76.2.1, 76.76.10.1"
+      },
+      "controld_ads": {
+        "name": "Control D Free Ads and Tracking",
+        "servers": "76.76.2.2, 76.76.10.2"
+      },
+      "controld_family": {
+        "name": "Control D Free Family",
+        "servers": "76.76.2.4, 76.76.10.4"
+      },
+      "controld_uncensored": {
+        "name": "Control D Free Uncensored",
+        "servers": "76.76.2.5, 76.76.10.5"
+      }
+    },
+    "custom": {
+      "title": "Custom DNS Settings",
+      "primary": "Primary DNS Server:",
+      "secondary": "Secondary DNS Server:",
+      "name": "Settings Name:",
+      "primaryPlaceholder": "Example: 8.8.8.8",
+      "secondaryPlaceholder": "Example: 8.8.4.4",
+      "namePlaceholder": "My Custom DNS",
+      "saveButton": "Save Custom DNS",
+      "updateButton": "Update profile",
+      "cancelButton": "Cancel",
+      "customLabel": "Custom"
+    },
+    "saved": {
+      "title": "Saved Settings",
+      "noSettings": "No settings saved",
+      "apply": "Select profile",
+      "delete": "Delete"
+    },
+    "actions": {
+      "apply": "Save DNS profile",
+      "reset": "Clear selected profile",
+      "copy": "Copy DNS",
+      "refresh": "Refresh status",
+      "testUnavailable": "DNS test limitations",
+      "checkProfile": "Check saved profile"
+    },
+    "copyLabel": "Click to instantly copy these DNS addresses!"
+  },
+  "notifications": {
+    "errors": {
+      "primaryRequired": "Please enter primary DNS server and settings name",
+      "invalidIP": "Please enter valid IP addresses",
+      "noConfig": "Please select a DNS configuration first",
+      "noSettings": "No saved DNS profile is available. Select a profile first.",
+      "themeStorage": "Could not save appearance preference",
+      "compareLimit": "You can compare up to 3 profiles at a time.",
+      "backupFailed": "Could not read or save the profile backup."
+    },
+    "success": {
+      "customSaved": "Custom DNS settings saved successfully!",
+      "dnsApplied": "DNS profile saved (DNS unchanged):",
+      "settingsDeleted": "Settings deleted successfully",
+      "editCancelled": "Edit mode cancelled",
+      "resetDefault": "Selected DNS profile cleared. DNS settings were not changed."
+    },
+    "info": {
+      "dnsTestUnavailable": "This extension stores DNS and DoH profiles but cannot test connectivity or change DNS settings."
+    }
+  },
+  "info": {
+    "note": "This extension stores DNS profiles and DoH templates only. It does not change or test DNS settings in Chrome or your operating system."
+  },
+  "links": {
+    "home": "Home",
+    "about": "About Project",
+    "developerName": "Naser Sadrmanesh",
+    "developerProfile": "GitHub profile",
+    "github": "GitHub",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Service",
+    "license": "License",
+    "contributing": "Contributing",
+    "security": "Security & Privacy"
+  },
+  "dohGuide": {
+    "title": "How to Enable DNS over HTTPS (DoH) in Chrome",
+    "intro": "Follow these steps to enable secure DNS (DoH) in your Chrome browser:",
+    "step1": "1. Open Chrome settings.",
+    "step2": "2. Search for 'security' in the settings search bar.",
+    "step3": "3. Scroll down to the 'Advanced' section and find 'Use secure DNS'.",
+    "step4": "4. Enable 'Use secure DNS' and select 'With custom provider'.",
+    "step5": "5. Enter the HTTPS address provided by your preferred DoH provider.",
+    "done": "Follow the steps in Chrome settings to enable DNS over HTTPS."
+  },
+  "enableDoh": {
+    "title": "How to Enable DNS over HTTPS (DoH) in Chrome",
+    "intro": "Follow these steps to enable secure DNS (DoH) in your Chrome browser:",
+    "step1": "1. Open Chrome settings.",
+    "step2": "2. Search for 'security' in the settings search bar.",
+    "step3": "3. Scroll down to the 'Advanced' section and find 'Use secure DNS'.",
+    "step4": "4. Enable 'Use secure DNS' and select 'With custom provider'.",
+    "step5": "5. Enter the HTTPS address provided by your preferred DoH provider.",
+    "done": "Follow the steps in Chrome settings to enable DNS over HTTPS."
+  },
+  "common": {
+    "current_dns": "Selected profile",
+    "select_dns": "Select DNS",
+    "custom_dns": "Custom DNS",
+    "add_custom_dns": "Add Custom DNS",
+    "save": "Save",
+    "cancel": "Cancel",
+    "copy_dns": "Copy DNS",
+    "copied": "Copied!",
+    "simulated_dns_warning": "Note: Chrome extensions cannot change DNS directly. Please set DNS manually or use DoH.",
+    "language": "Language",
+    "select_language": "Select Language",
+    "remove": "Remove",
+    "edit": "Edit",
+    "confirm": "Confirm",
+    "reset": "Reset",
+    "error_invalid_dns": "Invalid DNS address.",
+    "error_empty_field": "This field cannot be empty.",
+    "success_saved": "Settings saved successfully."
+  },
+  "dohPoll": {
+    "q1": "Did you know Chrome can use DNS over HTTPS?",
+    "yes": "Yes, show me the guide!",
+    "no": "No, tell me more",
+    "q2": "Would you like to see a step-by-step DoH activation guide?",
+    "showGuide": "Show Guide",
+    "openSettings": "Open Chrome Security Settings",
+    "notifyTitle": "Why enable DoH?",
+    "notifyBody": "DNS over HTTPS encrypts requests between Chrome and the resolver, but the provider can still see them.",
+    "steps": [
+      "Go to <a href=\"chrome://settings/security\" target=\"_blank\">Chrome Security Settings</a>.",
+      "In the <b>Advanced</b> section, find <b>Use secure DNS</b>.",
+      "Enable <b>Use secure DNS</b>.",
+      "In <b>Custom provider</b>, enter the HTTPS address provided by your preferred DNS-over-HTTPS provider.",
+      "Save settings and restart Chrome."
+    ],
+    "note": "Apply any DNS changes manually in Chrome settings. This extension does not change DNS settings."
+  },
+  "copy_dns_btn": "Copy DNS",
+  "dns_copied": "DNS copied! You can set it manually.",
+  "dohManager": {
+    "title": "Chrome Secure DNS",
+    "description": "Choose a DNS-over-HTTPS provider. Profiles saved here do not change Chrome settings.",
+    "policyNote": "Chrome settings or administrator policies control whether Secure DNS is enabled.",
+    "providersTitle": "Provider templates",
+    "selected": "Selected for setup",
+    "useProvider": "Select",
+    "copyTemplate": "Copy template",
+    "customTitle": "Custom provider",
+    "customName": "Provider name",
+    "customNamePlaceholder": "My DNS provider",
+    "customTemplate": "HTTPS URL or Chrome URL template",
+    "customTemplatePlaceholder": "https://resolver-host/dns-query",
+    "templateHelp": "Use an HTTPS resolver URL. Chrome URL templates may end with {?dns}; provider compatibility is not tested.",
+    "saveProvider": "Save provider",
+    "removeProvider": "Remove",
+    "openSettings": "Open Chrome Secure DNS settings",
+    "invalidTemplate": "Enter a valid HTTPS resolver URL or URL template.",
+    "missingName": "Enter a provider name.",
+    "saved": "Custom provider saved.",
+    "selectedSaved": "Profile selected for setup; Chrome settings are unchanged.",
+    "removed": "Custom provider removed.",
+    "copied": "DoH address copied.",
+    "copyFailed": "Could not copy the DoH address.",
+    "settingsOpened": "Chrome Secure DNS settings opened.",
+    "settingsCopyFallback": "Could not open settings; the settings address was copied instead.",
+    "settingsFailed": "Could not open or copy the Chrome settings address.",
+    "loadFailed": "Could not load saved DoH profiles.",
+    "saveFailed": "Could not save the DoH profile.",
+    "removeFailed": "Could not remove the DoH profile."
+  },
+  "chromeSettings": {
+    "copyButton": "Copy Chrome Security Settings Address"
+  }
+}

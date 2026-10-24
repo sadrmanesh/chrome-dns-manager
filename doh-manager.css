@@ -1,0 +1,148 @@
+.secure-dns-manager {
+    display: grid;
+    gap: 10px;
+    margin: 12px 16px;
+    padding: 14px;
+    border: 1px solid var(--ui-border);
+    border-radius: 12px;
+    background: var(--ui-surface);
+    box-shadow: var(--ui-shadow);
+}
+
+.doh-manager-header h2,
+.secure-dns-manager h3 {
+    margin: 0;
+    color: var(--ui-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.doh-manager-header p,
+.doh-policy-note,
+.doh-field-help {
+    margin: 5px 0 0;
+    color: var(--ui-muted);
+    font-size: 10px;
+    line-height: 1.55;
+}
+
+.doh-policy-note {
+    padding: 8px 10px;
+    border-inline-start: 3px solid var(--ui-accent);
+    border-radius: 6px;
+    background: var(--ui-accent-soft);
+}
+
+.doh-provider-list {
+    display: grid;
+    gap: 7px;
+}
+
+.doh-provider-card {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    gap: 6px 10px;
+    align-items: center;
+    padding: 9px;
+    border: 1px solid var(--ui-border);
+    border-radius: 9px;
+    background: var(--ui-surface-muted);
+}
+
+.doh-provider-card.is-selected {
+    border-color: var(--ui-accent);
+    background: var(--ui-accent-soft);
+}
+
+.doh-provider-name {
+    margin: 0;
+    color: var(--ui-text);
+    font-size: 11px;
+    font-weight: 650;
+}
+
+.doh-provider-template {
+    display: block;
+    grid-column: 1 / -1;
+    overflow-wrap: anywhere;
+    color: var(--ui-muted);
+    direction: ltr;
+    font-family: ui-monospace, SFMono-Regular, Consolas, monospace;
+    font-size: 9px;
+    text-align: left;
+}
+
+.doh-provider-status {
+    color: var(--ui-accent);
+    font-size: 9px;
+    font-weight: 650;
+}
+
+.doh-provider-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    justify-content: flex-end;
+}
+
+.doh-provider-actions .btn {
+    min-height: 30px;
+    padding: 5px 8px;
+    font-size: 9px;
+}
+
+.doh-provider-actions .doh-remove-button {
+    border-color: var(--ui-border);
+    background: transparent;
+    color: var(--ui-danger);
+}
+
+.doh-custom-form {
+    display: grid;
+    gap: 7px;
+    margin-top: 2px;
+    padding-top: 11px;
+    border-top: 1px solid var(--ui-border);
+}
+
+.doh-custom-form .input-group {
+    margin-bottom: 0;
+}
+
+.doh-custom-form .btn {
+    justify-self: start;
+}
+
+.doh-manager-feedback {
+    min-height: 1.4em;
+    margin: 0;
+    color: var(--ui-muted);
+    font-size: 10px;
+}
+
+.doh-manager-feedback[data-kind="error"] {
+    color: var(--ui-danger);
+}
+
+.doh-manager-feedback[data-kind="success"] {
+    color: var(--ui-success);
+}
+
+.doh-manager-feedback[data-kind="info"] {
+    color: var(--ui-accent);
+}
+
+.secure-dns-manager .btn-chrome-settings {
+    width: 100%;
+    margin: 0;
+}
+
+@media (max-width: 360px) {
+    .doh-provider-card {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .doh-provider-actions {
+        justify-content: flex-start;
+    }
+}

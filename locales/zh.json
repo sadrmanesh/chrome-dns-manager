@@ -1,0 +1,315 @@
+{
+  "extension": {
+    "name": "DNS 配置管理器",
+    "description": "Chrome 浏览器的智能 DNS 设置"
+  },
+  "popup": {
+    "title": "DNS 设置",
+    "dnsToggle": {
+      "enabled": "已选择配置",
+      "disabled": "未选择配置"
+    },
+    "openInTab": "在新标签页中打开",
+    "status": {
+      "default": "未选择 DNS 配置",
+      "connected": "已选择的 DNS 配置:",
+      "noConnection": "未选择 DNS 配置",
+      "disabled": "未选择 DNS 配置",
+      "profileSelected": "配置已保存（DNS 未更改）"
+    },
+    "appearance": {
+      "label": "外观",
+      "system": "跟随系统",
+      "light": "浅色",
+      "dark": "深色"
+    },
+    "network": {
+      "title": "网络与游戏",
+      "refresh": "刷新",
+      "latency": "预计往返延迟",
+      "downlink": "预计下载速度",
+      "connection": "网络类型",
+      "notAvailable": "不可用",
+      "estimateNote": "仅显示 Chrome 提供的估算值；不会进行测速或连接游戏服务器。",
+      "gamingTitle": "游戏与 DNS",
+      "gamingNote": "DNS 可能影响登录或匹配时的域名查询，但游戏连接建立后不会改变延迟。已保存的配置不会更改 Chrome 设置。"
+    }
+  },
+  "dns": {
+    "discovery": {
+      "subtitle": "按用途浏览 DNS 服务商，并比较其公开信息。",
+      "compare": "比较所选项",
+      "searchPlaceholder": "搜索服务商或地址",
+      "filterLabel": "筛选 DNS 服务商",
+      "categories": {
+        "all": "全部配置",
+        "standard": "标准",
+        "security": "安全",
+        "ads": "广告拦截",
+        "family": "家庭",
+        "adult": "成人内容",
+        "unfiltered": "不过滤",
+        "uncensored": "无审查",
+        "custom": "自定义"
+      },
+      "favoritesOnly": "收藏",
+      "noResults": "没有符合筛选条件的配置。",
+      "selectForCompare": "选择以比较",
+      "addFavorite": "添加到收藏",
+      "removeFavorite": "从收藏中移除",
+      "source": "官方详情",
+      "sourceUnavailable": "未列出来源",
+      "dohAvailable": "提供 DoH 模板",
+      "noDoh": "未列出 DoH 模板",
+      "lastReviewed": "信息核验日期",
+      "comparisonTitle": "服务商比较",
+      "closeComparison": "关闭比较",
+      "comparisonNote": "服务功能和 DoH 兼容性依据公开信息；此扩展不会测试解析器性能。",
+      "comparisonEmpty": "使用复选框选择最多 3 个配置进行比较。",
+      "comparisonProfile": "配置",
+      "comparisonCategory": "用途",
+      "comparisonServers": "IPv4 服务器",
+      "comparisonDoH": "DoH 模板",
+      "comparisonSource": "官方来源"
+    },
+    "backup": {
+      "export": "导出配置",
+      "import": "导入配置",
+      "exported": "配置已导出。",
+      "imported": "配置已导入。",
+      "noNewProfiles": "此文件中的配置均已保存。",
+      "noProfiles": "没有可导出的已保存配置。",
+      "invalidFile": "配置文件无效或不受支持。",
+      "tooLarge": "所选文件过大。"
+    },
+    "presets": {
+      "title": "预设 DNS",
+      "google": {
+        "name": "Google DNS",
+        "servers": "8.8.8.8, 8.8.4.4"
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "servers": "1.1.1.1, 1.0.0.1"
+      },
+      "opendns": {
+        "name": "Open DNS",
+        "servers": "208.67.222.222, 208.67.220.220"
+      },
+      "quad9": {
+        "name": "Quad 9",
+        "servers": "9.9.9.9, 149.112.112.112"
+      },
+      "cloudflare_malware": {
+        "name": "Cloudflare 恶意软件防护",
+        "servers": "1.1.1.2, 1.0.0.2"
+      },
+      "cloudflare_family": {
+        "name": "Cloudflare 家庭防护",
+        "servers": "1.1.1.3, 1.0.0.3"
+      },
+      "adguard": {
+        "name": "AdGuard 广告与跟踪器过滤",
+        "servers": "94.140.14.14, 94.140.15.15"
+      },
+      "adguard_family": {
+        "name": "AdGuard 家庭防护",
+        "servers": "94.140.14.15, 94.140.15.16"
+      },
+      "adguard_unfiltered": {
+        "name": "AdGuard 无过滤",
+        "servers": "94.140.14.140, 94.140.14.141"
+      },
+      "cleanbrowsing_security": {
+        "name": "CleanBrowsing 安全过滤",
+        "servers": "185.228.168.9, 185.228.169.9"
+      },
+      "cleanbrowsing_family": {
+        "name": "CleanBrowsing 家庭过滤",
+        "servers": "185.228.168.168, 185.228.169.168"
+      },
+      "cleanbrowsing_adult": {
+        "name": "CleanBrowsing 成人内容过滤",
+        "servers": "185.228.168.10, 185.228.169.11"
+      },
+      "controld_unfiltered": {
+        "name": "Control D 免费版（无过滤）",
+        "servers": "76.76.2.0, 76.76.10.0"
+      },
+      "controld_malware": {
+        "name": "Control D 免费版（恶意软件过滤）",
+        "servers": "76.76.2.1, 76.76.10.1"
+      },
+      "controld_ads": {
+        "name": "Control D 免费版（广告与跟踪器过滤）",
+        "servers": "76.76.2.2, 76.76.10.2"
+      },
+      "controld_family": {
+        "name": "Control D 免费版（家庭）",
+        "servers": "76.76.2.4, 76.76.10.4"
+      },
+      "controld_uncensored": {
+        "name": "Control D 免费版（无审查）",
+        "servers": "76.76.2.5, 76.76.10.5"
+      }
+    },
+    "custom": {
+      "title": "自定义 DNS 设置",
+      "primary": "主 DNS 服务器:",
+      "secondary": "备用 DNS 服务器:",
+      "name": "设置名称:",
+      "primaryPlaceholder": "例如: 8.8.8.8",
+      "secondaryPlaceholder": "例如: 8.8.4.4",
+      "namePlaceholder": "我的自定义 DNS",
+      "saveButton": "保存自定义 DNS",
+      "updateButton": "更新配置",
+      "cancelButton": "取消",
+      "customLabel": "自定义"
+    },
+    "saved": {
+      "title": "已保存的设置",
+      "noSettings": "没有保存任何设置",
+      "apply": "选择配置",
+      "delete": "删除"
+    },
+    "actions": {
+      "apply": "保存 DNS 配置",
+      "reset": "清除所选配置",
+      "copy": "复制 DNS",
+      "refresh": "刷新状态",
+      "testUnavailable": "DNS 测试限制",
+      "checkProfile": "检查已保存的配置"
+    },
+    "copyLabel": "点击即可快速复制这些 DNS 地址！"
+  },
+  "notifications": {
+    "errors": {
+      "primaryRequired": "请输入主 DNS 服务器和设置名称",
+      "invalidIP": "请输入有效的 IP 地址",
+      "noConfig": "请先选择 DNS 配置",
+      "noSettings": "没有已保存的 DNS 配置，请先选择一个配置。",
+      "themeStorage": "无法保存外观偏好设置",
+      "compareLimit": "每次最多可比较 3 个配置。",
+      "backupFailed": "无法读取或保存配置备份。"
+    },
+    "success": {
+      "customSaved": "自定义 DNS 设置保存成功！",
+      "dnsApplied": "DNS 配置已保存（DNS 未更改）：",
+      "settingsDeleted": "设置删除成功",
+      "editCancelled": "编辑模式已取消",
+      "resetDefault": "已清除所选 DNS 配置；DNS 设置未更改。"
+    },
+    "info": {
+      "dnsTestUnavailable": "此扩展保存 DNS 和 DoH 配置，但无法测试连接或更改 DNS 设置。"
+    }
+  },
+  "info": {
+    "note": "此扩展保存 DNS 配置和 DoH 模板，不会更改或测试 Chrome 或操作系统中的 DNS 设置。"
+  },
+  "links": {
+    "home": "主页",
+    "about": "关于项目",
+    "developerName": "Naser Sadrmanesh",
+    "developerProfile": "GitHub 主页",
+    "github": "GitHub",
+    "privacy": "隐私政策",
+    "terms": "服务条款",
+    "license": "许可证",
+    "contributing": "贡献",
+    "security": "安全和隐私"
+  },
+  "dohPoll": {
+    "q1": "您知道 Chrome 可以使用 DNS over HTTPS 吗？",
+    "yes": "是的，告诉我怎么做！",
+    "no": "不了，想了解更多",
+    "q2": "您想查看启用 DoH 的分步指南吗？",
+    "showGuide": "显示指南",
+    "openSettings": "打开 Chrome 安全设置",
+    "notifyTitle": "为什么启用 DoH？",
+    "notifyBody": "DNS over HTTPS 会加密 Chrome 与解析服务之间的请求，但服务提供商仍可看到这些请求。",
+    "steps": [
+      "前往 <a href=\"chrome://settings/security\" target=\"_blank\">Chrome 安全设置</a>。",
+      "在 <b>高级</b> 部分，找到 <b>使用安全 DNS</b>。",
+      "启用 <b>使用安全 DNS</b>。",
+      "在 <b>自定义提供商</b> 中，输入您选择的 DNS-over-HTTPS 服务提供商提供的 HTTPS 地址。",
+      "保存设置并重启 Chrome。"
+    ],
+    "note": "请在 Chrome 设置中手动应用 DNS 更改；此扩展不会更改 DNS 设置。"
+  },
+  "dohGuide": {
+    "title": "如何在 Chrome 中启用 DNS over HTTPS (DoH)",
+    "intro": "请按照以下步骤在 Chrome 浏览器中启用安全 DNS（DoH）：",
+    "step1": "1. 打开 Chrome 设置。",
+    "step2": "2. 在设置搜索栏中搜索\"安全\"。",
+    "step3": "3. 向下滚动到\"高级\"部分，找到\"使用安全 DNS\"。",
+    "step4": "4. 启用\"使用安全 DNS\"，并选择\"自定义提供商\"。",
+    "step5": "5. 输入您选择的 DoH 服务提供商提供的 HTTPS 地址。",
+    "done": "请在 Chrome 设置中按步骤启用 DNS over HTTPS。"
+  },
+  "enableDoh": {
+    "title": "如何在 Chrome 中启用 DNS over HTTPS (DoH)",
+    "intro": "请按照以下步骤在 Chrome 浏览器中启用安全 DNS（DoH）：",
+    "step1": "1. 打开 Chrome 设置。",
+    "step2": "2. 在设置搜索栏中搜索\"安全\"。",
+    "step3": "3. 向下滚动到\"高级\"部分，找到\"使用安全 DNS\"。",
+    "step4": "4. 启用\"使用安全 DNS\"，并选择\"自定义提供商\"。",
+    "step5": "5. 输入您选择的 DoH 服务提供商提供的 HTTPS 地址。",
+    "done": "请在 Chrome 设置中按步骤启用 DNS over HTTPS。"
+  },
+  "common": {
+    "current_dns": "所选配置",
+    "select_dns": "选择 DNS",
+    "custom_dns": "自定义 DNS",
+    "add_custom_dns": "添加自定义 DNS",
+    "save": "保存",
+    "cancel": "取消",
+    "copy_dns": "复制 DNS",
+    "copied": "已复制！",
+    "simulated_dns_warning": "注意：Chrome 扩展无法直接更改 DNS。请手动设置 DNS 或使用 DoH。",
+    "language": "语言",
+    "select_language": "选择语言",
+    "remove": "移除",
+    "edit": "编辑",
+    "confirm": "确认",
+    "reset": "重置",
+    "error_invalid_dns": "无效的 DNS 地址。",
+    "error_empty_field": "此字段不能为空。",
+    "success_saved": "设置已成功保存。"
+  },
+  "copy_dns_btn": "复制 DNS",
+  "dns_copied": "DNS 已复制！你可以手动设置。",
+  "chromeSettings": {
+    "copyButton": "复制 Chrome 安全设置地址"
+  },
+  "dohManager": {
+    "title": "Chrome 安全 DNS",
+    "description": "选择 DNS-over-HTTPS 服务提供商。此处保存的配置不会更改 Chrome 设置。",
+    "policyNote": "安全 DNS 是否启用由 Chrome 设置或管理员策略控制。",
+    "providersTitle": "服务提供商模板",
+    "selected": "已选择用于设置",
+    "useProvider": "选择",
+    "copyTemplate": "复制模板",
+    "customTitle": "自定义服务提供商",
+    "customName": "服务提供商名称",
+    "customNamePlaceholder": "我的 DNS 服务提供商",
+    "customTemplate": "HTTPS 地址或 Chrome 地址模板",
+    "customTemplatePlaceholder": "https://resolver-host/dns-query",
+    "templateHelp": "请输入 HTTPS 解析器地址。Chrome 地址模板可使用 {?dns} 结尾；不会测试服务提供商兼容性。",
+    "saveProvider": "保存服务提供商",
+    "removeProvider": "移除",
+    "openSettings": "打开 Chrome 安全 DNS 设置",
+    "invalidTemplate": "请输入有效的 HTTPS 解析器地址或地址模板。",
+    "missingName": "请输入服务提供商名称。",
+    "saved": "自定义服务提供商已保存。",
+    "selectedSaved": "配置已选作设置参考；Chrome 设置未更改。",
+    "removed": "自定义服务提供商已移除。",
+    "copied": "DoH 地址已复制。",
+    "copyFailed": "无法复制 DoH 地址。",
+    "settingsOpened": "Chrome 安全 DNS 设置已打开。",
+    "settingsCopyFallback": "无法打开设置；已复制设置页面地址。",
+    "settingsFailed": "无法打开或复制 Chrome 设置页面地址。",
+    "loadFailed": "无法加载已保存的 DoH 配置。",
+    "saveFailed": "无法保存 DoH 配置。",
+    "removeFailed": "无法移除 DoH 配置。"
+  }
+}
