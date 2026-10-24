@@ -1,0 +1,28 @@
+{
+  "name": "chrome-dns-manager",
+  "version": "1.5.0",
+  "description": "A Chrome extension for managing DNS profiles and DoH templates",
+  "main": "background.js",
+  "scripts": {
+    "build": "echo 'No build process required for Chrome extension'",
+    "lint": "node --check background.js && node --check popup.js && node --check js/i18n.js && node --check js/doh-manager.js && node --check site.js"
+  },
+  "keywords": [
+    "chrome-extension",
+    "dns",
+    "network",
+    "configuration",
+    "browser-extension"
+  ],
+  "license": "Custom-BY-NC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sadrmanesh/chrome-dns-manager"
+  },
+  "homepage": "https://sadrmanesh.github.io/chrome-dns-manager/",
+  "engines": {
+    "node": ">=14.0.0"
+  },
+  "devDependencies": {},
+  "dependencies": {}
+}

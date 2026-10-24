@@ -1,0 +1,29 @@
+{
+  "manifest_version": 3,
+  "name": "DNS Configuration Manager",
+  "version": "1.5.0",
+  "description": "Manage DNS profiles and DoH templates for manual Chrome Secure DNS setup",
+  "homepage_url": "https://sadrmanesh.github.io/chrome-dns-manager/",
+  "permissions": [
+    "storage"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "DNS Configuration Manager",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_security_policy": {
+    "extension_pages": "script-src 'self'; object-src 'self'"
+  }
+}

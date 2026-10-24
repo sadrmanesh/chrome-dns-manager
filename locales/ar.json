@@ -1,0 +1,315 @@
+{
+  "extension": {
+    "name": "مدير إعدادات DNS",
+    "description": "إعدادات DNS ذكية لمتصفح Chrome"
+  },
+  "popup": {
+    "title": "إعدادات DNS",
+    "dnsToggle": {
+      "enabled": "تم اختيار ملف",
+      "disabled": "لم يتم اختيار ملف"
+    },
+    "openInTab": "فتح في تب جديد",
+    "status": {
+      "default": "لم يتم اختيار ملف DNS",
+      "connected": "ملف DNS المحدد:",
+      "noConnection": "لم يتم تحديد ملف DNS",
+      "disabled": "لم يتم اختيار ملف DNS",
+      "profileSelected": "تم حفظ الملف (لم يتغير DNS)"
+    },
+    "appearance": {
+      "label": "المظهر",
+      "system": "النظام",
+      "light": "فاتح",
+      "dark": "داكن"
+    },
+    "network": {
+      "title": "الشبكة والألعاب",
+      "refresh": "تحديث",
+      "latency": "زمن الاستجابة التقديري",
+      "downlink": "سرعة التنزيل التقديرية",
+      "connection": "نوع الشبكة",
+      "notAvailable": "غير متاح",
+      "estimateNote": "هذه تقديرات يوفرها Chrome فقط؛ لا يُجرى اختبار سرعة أو اختبار اتصال بخادم لعبة.",
+      "gamingTitle": "الألعاب وDNS",
+      "gamingNote": "قد يؤثر DNS في البحث عن النطاقات أثناء تسجيل الدخول أو التوفيق للمباريات، لكنه لا يغيّر زمن الاستجابة بعد الاتصال باللعبة. الملفات المحفوظة لا تغيّر إعدادات Chrome."
+    }
+  },
+  "dns": {
+    "discovery": {
+      "subtitle": "استعرض المزودين حسب الغرض، ثم قارن الخيارات المنشورة لديهم.",
+      "compare": "مقارنة المحدد",
+      "searchPlaceholder": "ابحث عن مزود أو عنوان",
+      "filterLabel": "تصفية مزودي DNS",
+      "categories": {
+        "all": "كل الملفات",
+        "standard": "قياسي",
+        "security": "الأمان",
+        "ads": "حظر الإعلانات",
+        "family": "العائلة",
+        "adult": "محتوى للبالغين",
+        "unfiltered": "بلا تصفية",
+        "uncensored": "بلا رقابة",
+        "custom": "مخصص"
+      },
+      "favoritesOnly": "المفضلة",
+      "noResults": "لا توجد ملفات تطابق عوامل التصفية.",
+      "selectForCompare": "حدد للمقارنة",
+      "addFavorite": "أضف إلى المفضلة",
+      "removeFavorite": "أزل من المفضلة",
+      "source": "التفاصيل الرسمية",
+      "sourceUnavailable": "المصدر غير مدرج",
+      "dohAvailable": "قالب DoH متاح",
+      "noDoh": "لا يوجد قالب DoH مدرج",
+      "lastReviewed": "تم التحقق من التفاصيل",
+      "comparisonTitle": "مقارنة المزودين",
+      "closeComparison": "إغلاق المقارنة",
+      "comparisonNote": "تستند الميزات وتوافق DoH إلى المعلومات المنشورة؛ لا يختبر هذا الامتداد أداء المحللات.",
+      "comparisonEmpty": "حدد ما يصل إلى 3 ملفات باستخدام مربعات الاختيار للمقارنة.",
+      "comparisonProfile": "الملف",
+      "comparisonCategory": "الاستخدام",
+      "comparisonServers": "خوادم IPv4",
+      "comparisonDoH": "قالب DoH",
+      "comparisonSource": "المصدر الرسمي"
+    },
+    "backup": {
+      "export": "تصدير الملفات",
+      "import": "استيراد الملفات",
+      "exported": "تم تصدير الملفات.",
+      "imported": "تم استيراد الملفات.",
+      "noNewProfiles": "جميع الملفات في هذا الملف محفوظة بالفعل.",
+      "noProfiles": "لا توجد ملفات محفوظة لتصديرها.",
+      "invalidFile": "ملف الملفات غير صالح أو غير مدعوم.",
+      "tooLarge": "الملف المحدد كبير جداً."
+    },
+    "presets": {
+      "title": "DNS جاهز",
+      "google": {
+        "name": "Google DNS",
+        "servers": "8.8.8.8, 8.8.4.4"
+      },
+      "cloudflare": {
+        "name": "Cloudflare",
+        "servers": "1.1.1.1, 1.0.0.1"
+      },
+      "opendns": {
+        "name": "Open DNS",
+        "servers": "208.67.222.222, 208.67.220.220"
+      },
+      "quad9": {
+        "name": "Quad 9",
+        "servers": "9.9.9.9, 149.112.112.112"
+      },
+      "cloudflare_malware": {
+        "name": "Cloudflare لحظر البرمجيات الضارة",
+        "servers": "1.1.1.2, 1.0.0.2"
+      },
+      "cloudflare_family": {
+        "name": "Cloudflare للحماية العائلية",
+        "servers": "1.1.1.3, 1.0.0.3"
+      },
+      "adguard": {
+        "name": "AdGuard لحظر الإعلانات والمتتبعات",
+        "servers": "94.140.14.14, 94.140.15.15"
+      },
+      "adguard_family": {
+        "name": "AdGuard للحماية العائلية",
+        "servers": "94.140.14.15, 94.140.15.16"
+      },
+      "adguard_unfiltered": {
+        "name": "AdGuard بدون تصفية",
+        "servers": "94.140.14.140, 94.140.14.141"
+      },
+      "cleanbrowsing_security": {
+        "name": "CleanBrowsing للتصفية الأمنية",
+        "servers": "185.228.168.9, 185.228.169.9"
+      },
+      "cleanbrowsing_family": {
+        "name": "CleanBrowsing للتصفية العائلية",
+        "servers": "185.228.168.168, 185.228.169.168"
+      },
+      "cleanbrowsing_adult": {
+        "name": "CleanBrowsing لتصفية محتوى البالغين",
+        "servers": "185.228.168.10, 185.228.169.11"
+      },
+      "controld_unfiltered": {
+        "name": "Control D المجاني بدون تصفية",
+        "servers": "76.76.2.0, 76.76.10.0"
+      },
+      "controld_malware": {
+        "name": "Control D المجاني لحظر البرمجيات الضارة",
+        "servers": "76.76.2.1, 76.76.10.1"
+      },
+      "controld_ads": {
+        "name": "Control D المجاني لحظر الإعلانات والمتتبعات",
+        "servers": "76.76.2.2, 76.76.10.2"
+      },
+      "controld_family": {
+        "name": "Control D المجاني للعائلة",
+        "servers": "76.76.2.4, 76.76.10.4"
+      },
+      "controld_uncensored": {
+        "name": "Control D المجاني غير الخاضع للرقابة",
+        "servers": "76.76.2.5, 76.76.10.5"
+      }
+    },
+    "custom": {
+      "title": "إعدادات DNS مخصصة",
+      "primary": "خادم DNS الأساسي:",
+      "secondary": "خادم DNS الثانوي:",
+      "name": "اسم الإعدادات:",
+      "primaryPlaceholder": "مثال: 8.8.8.8",
+      "secondaryPlaceholder": "مثال: 8.8.4.4",
+      "namePlaceholder": "DNS مخصص",
+      "saveButton": "حفظ DNS مخصص",
+      "updateButton": "تحديث الملف",
+      "cancelButton": "إلغاء",
+      "customLabel": "مخصص"
+    },
+    "saved": {
+      "title": "الإعدادات المحفوظة",
+      "noSettings": "لا توجد إعدادات محفوظة",
+      "apply": "اختيار الملف",
+      "delete": "حذف"
+    },
+    "actions": {
+      "apply": "حفظ ملف DNS",
+      "reset": "مسح الملف المحدد",
+      "copy": "نسخ DNS",
+      "refresh": "تحديث الحالة",
+      "testUnavailable": "قيود اختبار DNS",
+      "checkProfile": "التحقق من ملف DNS المحفوظ"
+    },
+    "copyLabel": "انقر لنسخ عناوين DNS فوراً!"
+  },
+  "notifications": {
+    "errors": {
+      "primaryRequired": "يرجى إدخال خادم DNS الأساسي واسم الإعدادات",
+      "invalidIP": "يرجى إدخال عناوين IP صحيحة",
+      "noConfig": "يرجى اختيار إعدادات DNS أولاً",
+      "noSettings": "لا يوجد ملف DNS محفوظ؛ اختر ملفًا أولاً.",
+      "themeStorage": "تعذر حفظ تفضيل المظهر",
+      "compareLimit": "يمكنك مقارنة 3 ملفات كحد أقصى في المرة الواحدة.",
+      "backupFailed": "تعذرت قراءة نسخة الملفات الاحتياطية أو حفظها."
+    },
+    "success": {
+      "customSaved": "تم حفظ إعدادات DNS المخصصة بنجاح!",
+      "dnsApplied": "تم حفظ ملف DNS (لم يتغير DNS):",
+      "settingsDeleted": "تم حذف الإعدادات بنجاح",
+      "editCancelled": "تم إلغاء وضع التحرير",
+      "resetDefault": "تم مسح ملف DNS المحدد؛ لم تتغير إعدادات DNS."
+    },
+    "info": {
+      "dnsTestUnavailable": "يحفظ هذا الامتداد ملفات DNS وDoH، لكنه لا يستطيع اختبار الاتصال أو تغيير إعدادات DNS."
+    }
+  },
+  "info": {
+    "note": "يحفظ هذا الامتداد ملفات DNS وقوالب DoH، ولا يغيّر إعدادات DNS في Chrome أو نظام التشغيل ولا يختبرها."
+  },
+  "links": {
+    "home": "الرئيسية",
+    "about": "حول المشروع",
+    "developerName": "ناصر صدرمنش",
+    "developerProfile": "صفحة GitHub",
+    "github": "GitHub",
+    "privacy": "سياسة الخصوصية",
+    "terms": "شروط الخدمة",
+    "license": "الترخيص",
+    "contributing": "المساهمة",
+    "security": "الأمان والخصوصية"
+  },
+  "dohPoll": {
+    "q1": "هل تعلم أن Chrome يمكنه استخدام DNS عبر HTTPS؟",
+    "yes": "نعم، أرني كيف!",
+    "no": "لا، أريد معرفة المزيد",
+    "q2": "هل ترغب في رؤية دليل خطوة بخطوة لتفعيل DoH؟",
+    "showGuide": "عرض الدليل",
+    "openSettings": "افتح إعدادات أمان كروم",
+    "notifyTitle": "لماذا تفعيل DoH؟",
+    "notifyBody": "يشفّر DNS عبر HTTPS الطلبات بين Chrome ومحلل الأسماء، لكن المزود يظل قادرًا على رؤيتها.",
+    "steps": [
+      "اذهب إلى <a href=\"chrome://settings/security\" target=\"_blank\">إعدادات أمان كروم</a>.",
+      "في قسم <b>المتقدم</b>، ابحث عن <b>استخدام DNS آمن</b>.",
+      "فعّل خيار <b>استخدام DNS آمن</b>.",
+      "في <b>مزود مخصص</b>، أدخل عنوان HTTPS الذي يقدمه مزود DNS عبر HTTPS الذي تختاره.",
+      "احفظ الإعدادات وأعد تشغيل كروم."
+    ],
+    "note": "يجب تطبيق أي تغييرات DNS يدويًا من إعدادات Chrome؛ لا يغيّر هذا الامتداد إعدادات DNS."
+  },
+  "dohGuide": {
+    "title": "كيفية تفعيل DNS عبر HTTPS (DoH) في كروم",
+    "intro": "اتبع هذه الخطوات لتفعيل DNS الآمن (DoH) في متصفح كروم:",
+    "step1": "١. افتح إعدادات كروم.",
+    "step2": "٢. ابحث عن 'الأمان' في شريط بحث الإعدادات.",
+    "step3": "٣. انتقل إلى قسم 'متقدم' وابحث عن 'استخدام DNS آمن'.",
+    "step4": "٤. فعّل خيار 'استخدام DNS آمن' واختر 'مع مزود مخصص'.",
+    "step5": "٥. أدخل عنوان HTTPS الذي يقدمه مزود DoH المفضل لديك.",
+    "done": "اتبع الخطوات في إعدادات Chrome لتفعيل DNS عبر HTTPS."
+  },
+  "enableDoh": {
+    "title": "كيفية تفعيل DNS عبر HTTPS (DoH) في كروم",
+    "intro": "اتبع هذه الخطوات لتفعيل DNS الآمن (DoH) في متصفح كروم:",
+    "step1": "١. افتح إعدادات كروم.",
+    "step2": "٢. ابحث عن 'الأمان' في شريط بحث الإعدادات.",
+    "step3": "٣. انتقل إلى قسم 'متقدم' وابحث عن 'استخدام DNS آمن'.",
+    "step4": "٤. فعّل خيار 'استخدام DNS آمن' واختر 'مع مزود مخصص'.",
+    "step5": "٥. أدخل عنوان HTTPS الذي يقدمه مزود DoH المفضل لديك.",
+    "done": "اتبع الخطوات في إعدادات Chrome لتفعيل DNS عبر HTTPS."
+  },
+  "common": {
+    "current_dns": "الملف المحدد",
+    "select_dns": "اختر DNS",
+    "custom_dns": "DNS مخصص",
+    "add_custom_dns": "إضافة DNS مخصص",
+    "save": "حفظ",
+    "cancel": "إلغاء",
+    "copy_dns": "نسخ DNS",
+    "copied": "تم النسخ!",
+    "simulated_dns_warning": "ملاحظة: لا يمكن لإضافات كروم تغيير DNS مباشرة. يرجى ضبط DNS يدويًا أو استخدام DoH.",
+    "language": "اللغة",
+    "select_language": "اختر اللغة",
+    "remove": "إزالة",
+    "edit": "تعديل",
+    "confirm": "تأكيد",
+    "reset": "إعادة تعيين",
+    "error_invalid_dns": "عنوان DNS غير صالح.",
+    "error_empty_field": "لا يمكن أن يكون هذا الحقل فارغًا.",
+    "success_saved": "تم حفظ الإعدادات بنجاح.",
+    "copy_dns_btn": "نسخ DNS",
+    "dns_copied": "تم نسخ DNS! يمكنك تعيينه يدويًا."
+  },
+  "chromeSettings": {
+    "copyButton": "نسخ عنوان إعدادات أمان كروم"
+  },
+  "dohManager": {
+    "title": "DNS الآمن في Chrome",
+    "description": "اختر مزود DNS عبر HTTPS. حفظ الملفات هنا لا يغيّر إعدادات Chrome.",
+    "policyNote": "تتحكم إعدادات Chrome أو سياسات المشرف في تفعيل DNS الآمن.",
+    "providersTitle": "قوالب المزودين",
+    "selected": "محدد للإعداد",
+    "useProvider": "اختيار",
+    "copyTemplate": "نسخ القالب",
+    "customTitle": "مزود مخصص",
+    "customName": "اسم المزود",
+    "customNamePlaceholder": "مزود DNS الخاص بي",
+    "customTemplate": "عنوان HTTPS أو قالب عنوان Chrome",
+    "customTemplatePlaceholder": "https://resolver-host/dns-query",
+    "templateHelp": "استخدم عنوان HTTPS. يمكن أن ينتهي قالب Chrome بـ {?dns}؛ لا يتم اختبار توافق المزود.",
+    "saveProvider": "حفظ المزود",
+    "removeProvider": "إزالة",
+    "openSettings": "فتح إعدادات DNS الآمن في Chrome",
+    "invalidTemplate": "أدخل عنوان HTTPS أو قالب عنوان صالحًا.",
+    "missingName": "أدخل اسم المزود.",
+    "saved": "تم حفظ المزود المخصص.",
+    "selectedSaved": "تم اختيار الملف للإعداد؛ لم تتغير إعدادات Chrome.",
+    "removed": "تمت إزالة المزود المخصص.",
+    "copied": "تم نسخ عنوان DoH.",
+    "copyFailed": "تعذر نسخ عنوان DoH.",
+    "settingsOpened": "تم فتح إعدادات DNS الآمن في Chrome.",
+    "settingsCopyFallback": "تعذر فتح الإعدادات؛ تم نسخ عنوان الصفحة.",
+    "settingsFailed": "تعذر فتح عنوان إعدادات Chrome أو نسخه.",
+    "loadFailed": "تعذر تحميل ملفات DoH المحفوظة.",
+    "saveFailed": "تعذر حفظ ملف DoH.",
+    "removeFailed": "تعذر إزالة ملف DoH."
+  }
+}
