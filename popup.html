@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DNS Settings</title>
+    <link rel="stylesheet" href="popup.css">
+    <link rel="stylesheet" href="doh-manager.css">
+</head>
+<body>
+    <div class="container">
+        <header class="app-header">
+            <div class="brand-row">
+                <div class="brand-mark" aria-hidden="true">DNS</div>
+                <h1>DNS Settings</h1>
+            </div>
+            <button id="openInTab" class="btn btn-primary" type="button">Open in new tab</button>
+            <button class="status-indicator" id="statusIndicator" type="button" aria-controls="currentDnsValue">
+                <span class="status-dot"></span>
+                <span class="status-text">No DNS profile selected</span>
+            </button>
+        </header>
+
+        <section class="language-selector" aria-label="Language selection">
+            <div class="language-header">
+                <div class="language-title">
+                    <span class="title-text">Language</span>
+                    <span class="language-subtitle">اختر اللغة / Select language</span>
+                </div>
+            </div>
+            <div class="language-grid">
+                <button class="lang-btn active" data-lang="en" type="button" aria-pressed="true">
+                    <span class="lang-icon" aria-hidden="true">🇺🇸</span>
+                    <span class="lang-info"><span class="lang-name">English</span></span>
+                    <span class="lang-check" aria-hidden="true">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                </button>
+                <button class="lang-btn" data-lang="fa" type="button" aria-pressed="false">
+                    <span class="lang-icon" aria-hidden="true">🇮🇷</span>
+                    <span class="lang-info"><span class="lang-name">فارسی</span></span>
+                    <span class="lang-check" aria-hidden="true">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                </button>
+                <button class="lang-btn" data-lang="ar" type="button" aria-pressed="false">
+                    <span class="lang-icon" aria-hidden="true">🇸🇦</span>
+                    <span class="lang-info"><span class="lang-name">العربية</span></span>
+                    <span class="lang-check" aria-hidden="true">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                </button>
+                <button class="lang-btn" data-lang="zh" type="button" aria-pressed="false">
+                    <span class="lang-icon" aria-hidden="true">🇨🇳</span>
+                    <span class="lang-info"><span class="lang-name">中文</span></span>
+                    <span class="lang-check" aria-hidden="true">
+                        <svg class="check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
+                    </span>
+                </button>
+            </div>
+        </section>
+
+        <section class="appearance-selector" aria-labelledby="appearanceLabel">
+            <span class="appearance-label" id="appearanceLabel">Appearance</span>
+            <div class="theme-options" role="group" aria-labelledby="appearanceLabel">
+                <button class="theme-btn" type="button" data-theme="system" aria-pressed="true">
+                    <span aria-hidden="true">◐</span>
+                    <span class="theme-name">System</span>
+                </button>
+                <button class="theme-btn" type="button" data-theme="light" aria-pressed="false">
+                    <span aria-hidden="true">☀</span>
+                    <span class="theme-name">Light</span>
+                </button>
+                <button class="theme-btn" type="button" data-theme="dark" aria-pressed="false">
+                    <span aria-hidden="true">☾</span>
+                    <span class="theme-name">Dark</span>
+                </button>
+            </div>
+        </section>
+
+        <main class="main-content">
+            <section class="current-dns-bar" aria-live="polite">
+                <span class="current-dns-title">Selected DNS profile:</span>
+                <span id="currentDnsValue" class="current-dns-value">—</span>
+            </section>
+
+            <section class="network-insights" aria-labelledby="networkInsightsTitle">
+                <header class="network-insights-header">
+                    <h3 id="networkInsightsTitle" data-i18n="popup.network.title">Network &amp; gaming</h3>
+                    <button id="refreshNetworkMetrics" class="network-refresh-button" type="button" data-i18n="popup.network.refresh">Refresh</button>
+                </header>
+                <div class="network-metrics" aria-live="polite">
+                    <div class="network-metric">
+                        <span data-i18n="popup.network.latency">Estimated RTT</span>
+                        <strong id="networkRtt">—</strong>
+                    </div>
+                    <div class="network-metric">
+                        <span data-i18n="popup.network.downlink">Estimated download</span>
+                        <strong id="networkDownlink">—</strong>
+                    </div>
+                    <div class="network-metric">
+                        <span data-i18n="popup.network.connection">Network type</span>
+                        <strong id="networkType">—</strong>
+                    </div>
+                </div>
+                <p class="network-estimate-note" data-i18n="popup.network.estimateNote">Chrome-provided estimates only; this does not run a speed test or ping a game server.</p>
+                <div class="gaming-dns-note">
+                    <strong data-i18n="popup.network.gamingTitle">Gaming and DNS</strong>
+                    <p data-i18n="popup.network.gamingNote">DNS can affect domain lookups during sign-in or matchmaking, but it does not change latency once a game session is connected. Saved profiles do not change Chrome settings.</p>
+                </div>
+            </section>
+
+            <section class="dns-presets">
+                <div class="preset-section-heading">
+                    <div>
+                        <h3>Ready DNS</h3>
+                        <p class="preset-section-note" data-i18n="dns.discovery.subtitle">Browse providers by purpose, then compare their published options.</p>
+                    </div>
+                    <button id="compareSelectedPresets" class="btn btn-secondary compare-presets-button" type="button" data-i18n="dns.discovery.compare">Compare selected</button>
+                </div>
+                <div class="preset-toolbar">
+                    <label class="preset-search">
+                        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg>
+                        <input id="presetSearch" type="search" autocomplete="off" data-i18n-placeholder="dns.discovery.searchPlaceholder" data-i18n-aria-label="dns.discovery.searchPlaceholder" placeholder="Search providers or addresses">
+                    </label>
+                    <select id="presetCategory" data-i18n-aria-label="dns.discovery.filterLabel" aria-label="Filter DNS providers">
+                        <option value="all" data-i18n="dns.discovery.categories.all">All profiles</option>
+                        <option value="standard" data-i18n="dns.discovery.categories.standard">Standard</option>
+                        <option value="security" data-i18n="dns.discovery.categories.security">Security</option>
+                        <option value="ads" data-i18n="dns.discovery.categories.ads">Ad blocking</option>
+                        <option value="family" data-i18n="dns.discovery.categories.family">Family</option>
+                        <option value="adult" data-i18n="dns.discovery.categories.adult">Adult content</option>
+                        <option value="unfiltered" data-i18n="dns.discovery.categories.unfiltered">Unfiltered</option>
+                        <option value="uncensored" data-i18n="dns.discovery.categories.uncensored">Uncensored</option>
+                        <option value="custom" data-i18n="dns.discovery.categories.custom">Custom</option>
+                    </select>
+                    <label class="favorites-filter">
+                        <input id="favoritesOnly" type="checkbox">
+                        <span data-i18n="dns.discovery.favoritesOnly">Favorites</span>
+                    </label>
+                </div>
+                <div class="preset-grid" id="readyDnsGrid">
+                    <!-- Ready DNS presets will be rendered dynamically here -->
+                </div>
+                <p id="presetEmptyState" class="preset-empty-state" hidden data-i18n="dns.discovery.noResults">No profiles match these filters.</p>
+                <section id="presetComparison" class="preset-comparison" aria-labelledby="presetComparisonTitle" hidden>
+                    <div class="comparison-heading">
+                        <h4 id="presetComparisonTitle" data-i18n="dns.discovery.comparisonTitle">Provider comparison</h4>
+                        <button id="closePresetComparison" class="icon-button" type="button" data-i18n-aria-label="dns.discovery.closeComparison" aria-label="Close comparison">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"></path></svg>
+                        </button>
+                    </div>
+                    <div id="presetComparisonContent"></div>
+                    <p class="comparison-note" data-i18n="dns.discovery.comparisonNote">Provider features and DoH compatibility are based on published details; this extension does not test resolver performance.</p>
+                </section>
+            </section>
+
+            <section class="custom-dns">
+                <h3>Custom DNS Settings</h3>
+                <div class="input-group">
+                    <label for="primaryDNS">Primary DNS Server:</label>
+                    <input type="text" id="primaryDNS" placeholder="Example: 8.8.8.8" pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$" inputmode="decimal" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="input-group">
+                    <label for="secondaryDNS">Secondary DNS Server:</label>
+                    <input type="text" id="secondaryDNS" placeholder="Example: 8.8.4.4" pattern="^(?:[0-9]{1,3}\.){3}[0-9]{1,3}$" inputmode="decimal" autocomplete="off" spellcheck="false">
+                </div>
+                <div class="input-group">
+                    <label for="dnsName">Settings Name:</label>
+                    <input type="text" id="dnsName" placeholder="My Custom DNS" autocomplete="off">
+                </div>
+                <div class="custom-dns-buttons">
+                    <button id="saveCustom" class="btn btn-primary" type="button">Save Custom DNS</button>
+                    <button id="cancelEdit" class="btn btn-secondary" type="button" style="display: none;" data-i18n="dns.custom.cancelButton">Cancel</button>
+                </div>
+            </section>
+
+            <section class="secure-dns-manager" aria-labelledby="dohManagerTitle">
+                <header class="doh-manager-header">
+                    <h2 id="dohManagerTitle">Chrome Secure DNS</h2>
+                    <p id="dohManagerDescription">Choose a DNS-over-HTTPS provider. Profiles saved here do not change Chrome settings.</p>
+                </header>
+                <p class="doh-policy-note" id="dohPolicyNote" role="note">Chrome settings or administrator policies control whether Secure DNS is enabled.</p>
+                <h3 id="dohProvidersTitle">Provider templates</h3>
+                <div id="dohProviderList" class="doh-provider-list" aria-live="polite"></div>
+
+                <form id="dohCustomForm" class="doh-custom-form">
+                    <h3 id="dohCustomTitle">Custom provider</h3>
+                    <div class="input-group">
+                        <label id="dohCustomNameLabel" for="customDohName">Provider name</label>
+                        <input type="text" id="customDohName" maxlength="64" autocomplete="off" required>
+                    </div>
+                    <div class="input-group">
+                        <label id="dohCustomTemplateLabel" for="customDohTemplate">HTTPS URL or Chrome URL template</label>
+                        <input type="text" id="customDohTemplate" maxlength="2048" autocomplete="off" spellcheck="false" required>
+                    </div>
+                    <p class="doh-field-help" id="dohTemplateHelp"></p>
+                    <button id="saveCustomDoh" class="btn btn-secondary" type="submit">Save provider</button>
+                </form>
+
+                <p id="dohManagerFeedback" class="doh-manager-feedback" role="status" aria-live="polite"></p>
+                <button id="openChromeSettings" class="btn btn-chrome-settings" type="button">Open Chrome Secure DNS settings</button>
+            </section>
+
+            <section class="saved-configs">
+                <div class="saved-configs-heading">
+                    <h3>Saved Settings</h3>
+                    <div class="profile-backup-actions">
+                        <button id="exportDnsProfiles" class="btn btn-secondary" type="button">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0 4-4m-4 4-4-4"></path><path d="M5 16v4h14v-4"></path></svg>
+                            <span data-i18n="dns.backup.export">Export profiles</span>
+                        </button>
+                        <button id="importDnsProfiles" class="btn btn-secondary" type="button">
+                            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 15V3m0 0L8 7m4-4 4 4"></path><path d="M5 16v4h14v-4"></path></svg>
+                            <span data-i18n="dns.backup.import">Import profiles</span>
+                        </button>
+                        <input id="importDnsFile" type="file" accept=".json,application/json" hidden>
+                    </div>
+                </div>
+                <div id="savedConfigsList" class="saved-configs-list">
+                    <!-- Saved configurations will be loaded here -->
+                </div>
+            </section>
+
+            <section class="actions" aria-label="Profile actions">
+                <button id="applyDNS" class="btn btn-success" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m5 12 4 4L19 6"></path></svg><span class="button-label" data-i18n="dns.actions.apply">Apply DNS</span></button>
+                <button id="resetDNS" class="btn btn-danger" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12a8 8 0 1 0 2.3-5.7L4 8.5"></path><path d="M4 4v4.5h4.5"></path></svg><span class="button-label" data-i18n="dns.actions.reset">Reset to Default</span></button>
+                <button id="copyDNS" class="btn btn-info" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="8" y="8" width="12" height="12" rx="2"></rect><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h3"></path></svg><span class="button-label" data-i18n="dns.actions.copy">Copy DNS</span></button>
+                <button id="refreshDNS" class="btn btn-info" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 7v5h-5M4 17v-5h5"></path><path d="M5.5 9A7 7 0 0 1 18 6l2 2M4 16l2 2a7 7 0 0 0 12.5-3"></path></svg><span class="button-label" data-i18n="dns.actions.refresh">Refresh status</span></button>
+                <button id="testDNS" class="btn btn-warning" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"></circle><path d="M12 11v5m0-8h.01"></path></svg><span class="button-label" data-i18n="dns.actions.testUnavailable">DNS test limitations</span></button>
+                <button id="checkDNS" class="btn btn-secondary" type="button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 5 5"></path></svg><span class="button-label" data-i18n="dns.actions.checkProfile">Check saved profile</span></button>
+            </section>
+        </main>
+
+        <footer class="app-footer">
+            <aside class="info">
+                <p><strong>This extension stores DNS profiles and DoH templates only. It does not change DNS settings in Chrome or your operating system.</strong></p>
+            </aside>
+
+            <div class="developer-credit">
+                <span data-i18n="links.developerName">Naser Sadrmanesh</span>
+                <a id="developerProfileLink" href="https://github.com/sadrmanesh" target="_blank" rel="noopener noreferrer" data-i18n="links.developerProfile">GitHub profile</a>
+            </div>
+
+            <nav class="links-bar" aria-label="Project resources">
+                <a href="index.html" target="_blank" rel="noopener noreferrer" class="btn btn-link" id="homeLink">
+                    <span aria-hidden="true">⌂</span>
+                    <span>Home</span>
+                </a>
+                <a href="https://github.com/sadrmanesh/chrome-dns-manager" target="_blank" rel="noopener noreferrer" class="btn btn-link">
+                    <span aria-hidden="true">⌘</span>
+                    <span>GitHub</span>
+                </a>
+                <a href="privacy-policy.html" target="_blank" rel="noopener noreferrer" class="btn btn-link" id="privacyPolicyLink">
+                    <span aria-hidden="true">◈</span>
+                    <span>Privacy Policy</span>
+                </a>
+                <a href="terms-of-service.html" target="_blank" rel="noopener noreferrer" class="btn btn-link" id="termsOfServiceLink">
+                    <span aria-hidden="true">≡</span>
+                    <span>Terms of Service</span>
+                </a>
+                <a href="license.html" target="_blank" rel="noopener noreferrer" class="btn btn-link" id="licenseLink">
+                    <span aria-hidden="true">§</span>
+                    <span>License</span>
+                </a>
+                <a href="contributing.html" target="_blank" rel="noopener noreferrer" class="btn btn-link" id="contributingLink">
+                    <span aria-hidden="true">＋</span>
+                    <span>Contributing</span>
+                </a>
+                <a href="security.html" target="_blank" rel="noopener noreferrer" class="btn btn-link" id="securityLink">
+                    <span aria-hidden="true">◇</span>
+                    <span>Security &amp; Privacy</span>
+                </a>
+            </nav>
+
+            <div id="doh-poll-guide" class="doh-poll-guide"></div>
+        </footer>
+    </div>
+    
+    <script src="js/i18n.js"></script>
+    <script src="popup.js"></script>
+    <script src="js/doh-manager.js"></script>
+</body>
+</html> 
