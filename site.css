@@ -210,6 +210,41 @@ body.site-page {
     background: var(--page-accent-soft) !important;
 }
 
+.site-page a.store-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 9px;
+    margin-top: 16px;
+    padding: 11px 17px !important;
+    border: 1px solid #1a73e8 !important;
+    border-radius: 11px !important;
+    background: #1a73e8 !important;
+    color: #fff !important;
+    font-size: 14px;
+    font-weight: 700;
+    text-decoration: none !important;
+    transition: background-color 150ms ease, transform 150ms ease;
+}
+
+.site-page a.store-link:hover {
+    border-color: #1558b0 !important;
+    background: #1558b0 !important;
+    color: #fff !important;
+    text-decoration: none !important;
+    transform: translateY(-1px);
+}
+
+.site-page .store-link svg {
+    width: 20px;
+    height: 20px;
+    flex: 0 0 auto;
+    fill: none;
+    stroke: currentColor;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-width: 1.7;
+}
+
 .site-page input,
 .site-page select,
 .site-page textarea {

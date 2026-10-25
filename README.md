@@ -31,13 +31,17 @@ These illustrative interface mockups are design previews, not screenshots captur
 
 ## Install
 
+### Chrome Web Store
+
+The extension is published on the [Chrome Web Store](https://chromewebstore.google.com/detail/dns-configuration-manager/opoejijmagmdeeobilcpjnllpmoklnlk).
+
 ### Load the extension in Chrome
+
+For development or manual installation, use the unpacked extension:
 
 1. Download or clone this repository.
 2. Open `chrome://extensions` in Chrome and enable **Developer mode**.
 3. Select **Load unpacked** and choose the directory containing this README and `manifest.json`.
-
-This repository does not currently provide a Chrome Web Store installation link.
 
 ### Configure DNS manually
 
